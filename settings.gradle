@@ -1,0 +1,2 @@
+include ':app', ':network_layer'
+rootProject.name='Network'
