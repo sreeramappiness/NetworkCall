@@ -6,10 +6,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Network{
-    var BASE_URL:String="https://jsonplaceholder.typicode.com/"
+object Network{
 
-      fun get(): ApiInterface? {
+
+   // companion object {
+        var BASE_URL:String="https://jsonplaceholder.typicode.com/"
+        fun get(): ApiInterface {
             val gson = GsonBuilder()
                 .setLenient()
                 .create()
@@ -24,6 +26,7 @@ class Network{
                 .build()
 
             return retrofit.create(ApiInterface::class.java)
-        }
+       // }
+    }
 
 }
